@@ -1,0 +1,7 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/947428ea-5be3-4039-b2d9-34094f84f83b/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/kickstart-ethereum",
+    "appService.deploySubpath": ""
+}
