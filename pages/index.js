@@ -5,13 +5,21 @@ import Layout from './../components/Layout';
 import { Link } from './../routes';
 
 class CampaignIndex extends Component {
-    static async getInitialProps() {
-        const campaigns = await factory.methods.getDeployedCampaigns().call();
-        return { campaigns };
+
+    constructor(){
+        super();
+        this.state={
+            campaigns: []
+        }
+    }
+
+    async componentDidMount(){
+        let campaigns = await factory.methods.getDeployedCampaigns().call();
+        this.setState({campaigns: campaigns});
     }
 
     renderCampaigns() {
-        const items = this.props.campaigns.map(address => {
+        const items = this.state.campaigns.map(address => {
             return {
                 header: address,
                 description: (
